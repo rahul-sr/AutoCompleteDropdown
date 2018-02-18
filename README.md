@@ -1,2 +1,0 @@
-# AutoCompleteDropdown
-Created with CodeSandbox

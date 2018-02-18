@@ -8,7 +8,7 @@ h2 {
   position: relative;
 }
 
-.auto-complete span {
+.auto-complete .selected {
   cursor: pointer;
   display: inline-block;
   width: 100%;
@@ -17,9 +17,17 @@ h2 {
   border-radius: 5px;
 }
 
-.auto-complete input {
-  display: none;
+.auto-complete .search-box {
+  width: 70%;
+  border: none;
+  line-height: 19px;
+  margin: 0;
+  outline: none;
 }
+
+/* .auto-complete input {
+  display: none;
+} */
 
 .auto-complete ul {
   border: 1px solid #ddd;

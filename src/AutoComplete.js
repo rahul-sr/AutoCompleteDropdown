@@ -32,9 +32,8 @@ export default class AutoComplete extends Component {
         </li>
       );
     });
-    let showlistEle = this.state.showOptions ? listEle : null;
-    return (
-      <div className="auto-complete" onBlur={this.toggleOptions}>
+  let showlistEle = this.state.showOptions ? (<ul>{listEle}</ul>) : null;
+    return <div className="auto-complete" onBlur={this.toggleOptions}>
         <span onClick={this.toggleOptions}>
           {this.state.selected.name}
           <svg width="12" height="12">
@@ -42,8 +41,7 @@ export default class AutoComplete extends Component {
           </svg>
         </span>
         <input type="text" />
-        <ul>{showlistEle}</ul>
-      </div>
-    );
+        {showlistEle}
+      </div>;
   }
 }

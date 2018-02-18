@@ -1,15 +1,20 @@
-h2{
+h2 {
   font-weight: 400;
 }
 
 .auto-complete {
   width: 200px;
   margin: 50px auto;
+  position: relative;
 }
 
 .auto-complete span {
   cursor: pointer;
-  padding-right: 5px;
+  display: inline-block;
+  width: 100%;
+  line-height: 25px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
 .auto-complete input {
@@ -20,6 +25,7 @@ h2{
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 0;
+  margin: 5px 0;
 }
 
 .auto-complete li {
@@ -29,9 +35,11 @@ h2{
   cursor: pointer;
 }
 
-.auto-complete svg{
-    margin-left: 5px;
-    vertical-align: middle;
+.auto-complete svg {
+  vertical-align: middle;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 svg path {

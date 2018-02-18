@@ -3,7 +3,7 @@ h2 {
 }
 
 .auto-complete {
-  width: 200px;
+  width: 170px;
   margin: 50px auto;
   position: relative;
 }
@@ -19,14 +19,20 @@ h2 {
   color: #555;
 }
 
+.auto-complete .selected span {
+  text-align: left;
+  display: inline-block;
+  width: 100%;
+  padding-left: 15px;
+}
+
 .auto-complete .search-box {
-  width: 70%;
+  width: 82%;
   border: none;
   line-height: 19px;
   margin: 0;
   outline: none;
   font-size: 14px;
-  text-align: center;
 }
 
 /* .auto-complete input {
@@ -44,11 +50,12 @@ h2 {
 
 .auto-complete li {
   list-style: none;
-  padding: 4px 0;
-  border-bottom: 1px solid #ddd;
+  padding: 4px 15px;
+  border-bottom: 1px solid #efefef;
   cursor: pointer;
   color: #555;
   font-size: 14px;
+  text-align: left;
 }
 
 .auto-complete li:hover {

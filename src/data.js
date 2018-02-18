@@ -1,42 +1,12 @@
 export const data = [
-  {
-    id: 1,
-    name: "Kimble"
-  },
-  {
-    id: 2,
-    name: "Estell"
-  },
-  {
-    id: 3,
-    name: "Odelle"
-  },
-  {
-    id: 4,
-    name: "Gilberta"
-  },
-  {
-    id: 5,
-    name: "Haskell"
-  },
-  {
-    id: 6,
-    name: "Tadd"
-  },
-  {
-    id: 7,
-    name: "Inness"
-  },
-  {
-    id: 8,
-    name: "Lock"
-  },
-  {
-    id: 9,
-    name: "Freddie"
-  },
-  {
-    id: 10,
-    name: "Skipp"
-  }
+  { id: 1, name: "Branden Pundy" },
+  { id: 2, name: "Cathryn Faichnie" },
+  { id: 3, name: "Hewitt Grimditch" },
+  { id: 4, name: "Giovanna Thrush" },
+  { id: 5, name: "Albert Kiefer" },
+  { id: 6, name: "Toni Kinnaird" },
+  { id: 7, name: "Shirley Pighills" },
+  { id: 8, name: "Blane Meryett" },
+  { id: 9, name: "Elliott Braid" },
+  { id: 10, name: "Mirilla Greensted" }
 ];

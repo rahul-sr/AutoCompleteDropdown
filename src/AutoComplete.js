@@ -11,7 +11,7 @@ export default class AutoComplete extends Component {
       showOptions: false,
       selected: { id: 0, name: "Select" },
       searchBox: false,
-      filter: '',
+      filter: ""
     };
   }
 
@@ -38,29 +38,47 @@ export default class AutoComplete extends Component {
   };
 
   search = evt => {
-    this.setState({ filter: evt.currentTarget.value })
-  }
+    this.setState({ filter: evt.currentTarget.value });
+  };
 
   searchBox = () => {
-    return <input onClick={this.searchItem} onKeyUp={this.search} className="search-box" type="text" />;
+    return (
+      <input
+        onClick={this.searchItem}
+        onKeyUp={this.search}
+        className="search-box"
+        type="text"
+      />
+    );
   };
 
   selectedItem = () => {
     return <span onClick={this.searchItem}>{this.state.selected.name}</span>;
   };
 
-
   optionsList = () => {
-    const filteredList = this.props.list.filter((val) => val.name.includes(this.state.filter));
+    const filteredList = this.props.list.filter(val =>
+      val.name.includes(this.state.filter)
+    );
     const optionsList = filteredList.map(val => {
-      return <li key={val.id} id={val.id} onClick={this.selectItem}>
+      return (
+        <li key={val.id} id={val.id} onClick={this.selectItem}>
           {val.name}
-        </li>;
+        </li>
+      );
     });
     const optionsListWrapper = this.state.showOptions ? (
       <ul>{optionsList}</ul>
     ) : null;
     return optionsListWrapper;
+  };
+
+  arrow = () => {
+    return (
+      <svg width="12" height="12">
+        <path d="M0 0 L5 6 L10 0" />
+      </svg>
+    );
   };
 
   render() {
@@ -70,10 +88,7 @@ export default class AutoComplete extends Component {
     return (
       <div className="auto-complete" onClick={this.toggleOptions}>
         <div className="selected">
-          {searchBox}
-          <svg width="12" height="12">
-            <path d="M0 0 L5 6 L10 0" />
-          </svg>
+          {searchBox} {this.arrow()}
         </div>
         {this.optionsList()}
       </div>

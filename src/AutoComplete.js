@@ -13,7 +13,17 @@ export default class AutoComplete extends Component {
       searchBox: false,
       filter: ""
     };
+
+    document.addEventListener("click", this.handleOutsideClick, false);
   }
+
+  handleOutsideClick = evt => {
+    // ignore clicks on the component itself
+    if (this.node.contains(evt.target)) {
+      return;
+    }
+    this.setState({ showOptions: false, searchBox: false, filter: "" });
+  };
 
   toggleOptions = evt => {
     this.setState({
@@ -33,27 +43,31 @@ export default class AutoComplete extends Component {
     });
   };
 
-  searchItem = evt => {
+  showOptions = evt => {
     evt.stopPropagation();
+    this.setState({ showOptions: true, filter: evt.currentTarget.textContent });
   };
 
   search = evt => {
-    this.setState({ filter: evt.currentTarget.value });
+    this.setState({
+      filter: evt.currentTarget.value
+    });
   };
 
   searchBox = () => {
     return (
       <input
-        onClick={this.searchItem}
+        onClick={this.showOptions}
         onKeyUp={this.search}
         className="search-box"
         type="text"
+        placeholder="Select"
       />
     );
   };
 
   selectedItem = () => {
-    return <span onClick={this.searchItem}>{this.state.selected.name}</span>;
+    return <span>{this.state.selected.name}</span>;
   };
 
   optionsList = () => {
@@ -86,7 +100,13 @@ export default class AutoComplete extends Component {
       ? this.searchBox()
       : this.selectedItem();
     return (
-      <div className="auto-complete" onClick={this.toggleOptions}>
+      <div
+        className="auto-complete"
+        onClick={this.toggleOptions}
+        ref={node => {
+          this.node = node;
+        }}
+      >
         <div className="selected">
           {searchBox} {this.arrow()}
         </div>

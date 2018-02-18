@@ -15,6 +15,8 @@ h2 {
   line-height: 25px;
   border: 1px solid #ddd;
   border-radius: 5px;
+  font-size: 14px;
+  color: #555;
 }
 
 .auto-complete .search-box {
@@ -23,6 +25,8 @@ h2 {
   line-height: 19px;
   margin: 0;
   outline: none;
+  font-size: 14px;
+  text-align: center;
 }
 
 /* .auto-complete input {
@@ -34,6 +38,8 @@ h2 {
   border-radius: 5px;
   padding: 0;
   margin: 5px 0;
+  max-height: 130px;
+  overflow: scroll;
 }
 
 .auto-complete li {
@@ -41,6 +47,12 @@ h2 {
   padding: 4px 0;
   border-bottom: 1px solid #ddd;
   cursor: pointer;
+  color: #555;
+  font-size: 14px;
+}
+
+.auto-complete li:hover {
+  background: #efefef;
 }
 
 .auto-complete svg {
